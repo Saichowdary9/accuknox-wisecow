@@ -9,7 +9,7 @@ fi
 
 STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
 
-if [ "$STATUS" -eq 200 ]; then
+if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 400 ]; then
     echo "Application Status: UP"
 else
     echo "Application Status: DOWN"

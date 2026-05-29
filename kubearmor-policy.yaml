@@ -1,0 +1,15 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+name: wisecow-zero-trust
+spec:
+selector:
+matchLabels:
+app: wisecow
+
+file:
+matchDirectories:
+- dir: /
+recursive: true
+
+action: Block
